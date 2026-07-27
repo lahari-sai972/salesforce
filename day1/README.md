@@ -1,371 +1,79 @@
-# Salesforce Developer Learning Repository 🚀
+# Salesforce Learning – Day 1
 
-A comprehensive Salesforce Developer learning repository covering Salesforce Administration, Development, Apex, Lightning, Automation, Security, Integrations, and hands-on projects.
+## Overview
+Today, I focused on learning Salesforce development concepts by building an E-commerce data model, practising SOQL queries, understanding Apex programming basics, and implementing Apex Triggers using best practices.
 
----
+## Tasks Completed
 
-# 📋 Table of Contents
-
-- Overview
-- Repository Structure
-- Prerequisites
-- Getting Started
-- Learning Modules
-- Topics Covered
-- Projects
-- Tools Required
-- Resources
-- Contributing
-- License
-
----
-
-# 📖 Overview
-
-This repository is designed for beginners and aspiring Salesforce Developers.
-
-It provides a structured learning path from basic Salesforce concepts to advanced development topics with practical examples and mini projects.
-
-### Objectives
-
-- Learn Salesforce from scratch
-- Practice real-time development concepts
-- Understand Salesforce architecture
-- Build hands-on projects
-- Prepare for Salesforce Developer interviews
-
----
-
-# 📁 Repository Structure
-
-```
-Salesforce/
-│
-├── Day-1/
-├── Day-2/
-├── Day-3/
-├── Day-4/
-├── Day-5/
-├── Apex/
-├── Triggers/
-├── Flows/
-├── SOQL/
-├── SOSL/
-├── LWC/
-├── Integrations/
-├── Mini Projects/
-├── README.md
-└── LICENSE
-```
-
----
-
-# 🚀 Getting Started
-
-## Prerequisites
-
-Before starting, make sure you have:
-
-- Salesforce Developer Edition Account
-- Visual Studio Code
-- Salesforce Extension Pack
-- Salesforce CLI (SFDX)
-- Git
-- GitHub Account
-
----
-
-## Create a Salesforce Developer Account
-
-https://developer.salesforce.com/signup
-
----
-
-## Install Salesforce CLI
-
-Download from:
-
-https://developer.salesforce.com/tools/salesforcecli
-
-Verify installation
-
-```bash
-sf --version
-```
-
----
-
-## Clone Repository
-
-```bash
-git clone https://github.com/your-username/Salesforce.git
-```
-
-```bash
-cd Salesforce
-```
-
----
-
-## Authorize Salesforce Org
-
-```bash
-sf org login web
-```
-
----
-
-# 📚 Learning Modules
-
-## Day 1
-
-- Introduction to Salesforce
-- CRM Basics
-- Salesforce Architecture
-- Cloud Computing
-- Multi-Tenant Architecture
-- Salesforce Editions
-- Salesforce Navigation
-- Developer Org Setup
-
----
-
-## Day 2
-
-- Standard Objects
-- Custom Objects
-- Standard Fields
-- Custom Fields
-- Relationships
-- Lookup Relationship
-- Master-Detail Relationship
-
----
-
-## Day 3
-
-- Validation Rules
-- Formula Fields
-- Roll-Up Summary
-- Page Layouts
-- Record Types
-
----
-
-## Day 4
-
-- Profiles
-- Roles
-- Permission Sets
-- Sharing Rules
-- Organization Wide Defaults
-
----
-
-## Day 5
-
-- Flows
-- Process Automation
-- Approval Process
-- Email Alerts
-
----
-
-## Day 6
-
-- Apex Basics
-- Variables
-- Loops
-- Collections
-- Classes
-- Methods
-
----
-
-## Day 7
-
-- SOQL
-- SOSL
-- DML Operations
-- Database Class
-
----
-
-## Day 8
-
-- Apex Triggers
-- Trigger Context Variables
-- Before Trigger
-- After Trigger
-- Trigger Best Practices
-
----
-
-## Day 9
-
-- Lightning Web Components (LWC)
-- HTML
-- JavaScript
-- CSS
-- Apex Integration
-
----
-
-## Day 10
-
-- REST API
-- SOAP API
-- Named Credentials
-- Callouts
-- JSON
-
----
-
-# 📖 Topics Covered
-
-## Salesforce Administration
-
-- Users
-- Profiles
-- Roles
-- Permission Sets
-- Reports
-- Dashboards
-
----
-
-## Salesforce Development
-
-- Apex
-- Triggers
-- Classes
-- Test Classes
-- Governor Limits
-
----
-
-## Database
-
-- Objects
-- Fields
-- Relationships
-- SOQL
-- SOSL
-- DML
-
----
-
-## Automation
-
-- Flow Builder
-- Validation Rules
-- Approval Process
-- Email Alerts
-
----
-
-## Lightning Development
-
-- Lightning App Builder
-- Aura Components
-- Lightning Web Components (LWC)
-
----
-
-## Security
-
-- Object Level Security
-- Field Level Security
-- Record Level Security
-- Sharing Rules
-
----
-
-## Integrations
-
-- REST API
-- SOAP API
-- External Services
-- Named Credentials
-
----
-
-# 💻 Mini Projects
-
-This repository includes beginner-friendly Salesforce projects.
-
-## Project 1
-
-**E-Commerce Management System**
-
-Features
-
-- Customer Management
-- Product Management
-- Category Management
-- Order Management
-- Payment Management
-- Shipment Management
-
-Objects Used
-
-### Standard Objects
-
-- Account
-- Contact
+### 1. Data Model Design
+Designed and created an E-commerce data model with the following objects:
+- Account (Standard)
+- Contact (Standard)
+- Category
 - Product
 - Order
 - Order Item
-
-### Custom Objects
-
-- Category
 - Payment
 - Shipment
 
----
+Established relationships between objects using Lookup and Master-Detail relationships.
 
-## Project 2
+### 2. SOQL Practice
+Practised writing and executing SOQL queries, including:
+- WHERE Clause
+- ORDER BY with LIMIT
+- Relationship Queries
+- Aggregate Queries (COUNT)
+- Comparison Operators (>=)
 
-Student Management System
+Verified query execution and analysed the returned results.
 
----
+### 3. Apex Basics
+Learned the core concepts of Apex programming:
+- Apex Classes
+- Variables and Data Types
+- Methods
+- Lists and Collections
+- Conditional Statements (if/else)
+- Loops
+- Static Methods
+- Debugging using `System.debug()`
 
-## Project 3
+### 4. Apex Triggers
+Implemented an Apex Trigger using the Trigger Handler pattern.
 
-Employee Management System
+- **Before Insert:** Prevent duplicate Product records.
+- **After Update:** Update a related Category record automatically.
 
----
+Tested the trigger functionality and verified the expected behaviour.
 
-# 🛠 Tools Used
-
-- Salesforce Developer Edition
-- Visual Studio Code
-- Salesforce CLI
-- Git
-- GitHub
-
----
-
-# 🎯 Skills Covered
-
-- Salesforce Administration
-- Salesforce Development
-- Apex Programming
-- Lightning Web Components
+## Skills Gained
+- Salesforce CRM Fundamentals
+- Standard & Custom Objects
+- Salesforce Data Modelling
+- Lookup & Master-Detail Relationships
 - SOQL
-- SOSL
-- DML
-- Automation
-- Security
-- Integrations
+- Apex Programming Basics
+- Apex Classes and Methods
+- Variables and Collections
+- Apex Triggers
+- Trigger Handler Pattern
+
+## Challenges Faced
+- Resolving API name mismatches in SOQL and Apex.
+- Debugging trigger errors.
+- Understanding object relationships while writing queries.
+
+## Reflection
+**Today I learned** how to design a Salesforce data model, create relationships between objects, write and execute SOQL queries, understand Apex basics such as classes, variables, methods, and debugging, and implement Apex Triggers using the Trigger Handler pattern.
+
+**I'm still working on** improving my debugging skills, understanding advanced Apex concepts, and becoming more confident in writing scalable Salesforce solutions.
 
 ---
 
-# 📖 Learning Resources
-
-- Salesforce Trailhead
-- Salesforce Developer Documentation
-- Apex Developer Guide
-- Lightning Web Components Documentation
-
+## Technologies Used
+- Salesforce CRM
+- Apex
+- SOQL
+- Salesforce Trailhead Playground
+- Git & GitHub
