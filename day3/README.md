@@ -1,20 +1,36 @@
-# Salesforce E-Commerce Automation Project
+# Salesforce Order Automation Assignment
 
-## Overview
+## Project Title
 
-This project is a Salesforce-based e-commerce application developed to automate order processing, customer management, product management, shipment tracking, and email notifications.
-
-The project uses Salesforce declarative tools such as Flows and Validation Rules, along with Apex and SOQL, to create an efficient and scalable solution.
+Salesforce Order Management Automation Using Flows and Validation Rules
 
 ---
 
-## Technologies Used
+## Project Description
 
-- Salesforce
-- Apex
-- SOQL
+This project focuses on automating the order management process by using Salesforce declarative tools. Instead of depending entirely on Apex code, the application uses Record-Triggered Flows, Validation Rules, and SOQL to automate repetitive tasks and maintain data quality.
+
+The system automatically updates order information, creates shipment records, sends notifications, and validates user input.
+
+---
+
+## Project Objectives
+
+- Automate the order management process.
+- Improve data accuracy.
+- Reduce manual work.
+- Create shipment records automatically.
+- Understand the use of Flow, Validation Rules, and Apex.
+
+---
+
+## Tools and Technologies
+
+- Salesforce Developer Edition
 - Flow Builder
 - Validation Rules
+- Apex
+- SOQL
 - Lightning Experience
 
 ---
@@ -24,10 +40,10 @@ The project uses Salesforce declarative tools such as Flows and Validation Rules
 ### Custom Objects
 
 - Order__c
+- Shipment__c
 - Order_Item__c
 - Category__c
 - Payment__c
-- Shipment__c
 
 ### Standard Objects
 
@@ -36,88 +52,105 @@ The project uses Salesforce declarative tools such as Flows and Validation Rules
 
 ---
 
-# Requirements Implemented
-
-### Functional Requirements
-
-- Create customer orders.
-- Store product information.
-- Validate customer details.
-- Generate shipment records automatically.
-- Send email notifications.
-- Prevent invalid data entry.
-
----
-
 # Flow Implementation
 
-## 1. Automatic Order Date Assignment
+## Flow Type
 
-### Flow Type
-
-Before-Save Record-Triggered Flow
-
-### Description
-
-The flow automatically updates the order date whenever a new order is created.
-
-### Implementation Steps
-
-- Create a record-triggered flow.
-- Select the Order object.
-- Configure the flow to run before the record is saved.
-- Assign the current date to the Order Date field.
-- Save and activate the flow.
+Record-Triggered Flow
 
 ---
 
-## 2. Email Notification Flow
+## Trigger Event
 
-### Flow Type
-
-After-Save Record-Triggered Flow
-
-### Description
-
-The flow automatically sends an email notification whenever an order is created.
-
-### Implementation Steps
-
-- Create an after-save flow.
-- Select the Order object.
-- Add the Send Email action.
-- Configure the recipient and email body.
-- Save and activate the flow.
+The flow is executed whenever a new order record is created.
 
 ---
 
-## 3. Shipment Creation Flow
+## Actions Performed
 
-### Flow Type
+### Automatic Date Assignment
 
-After-Save Record-Triggered Flow
+The system automatically populates the Order Date field with the current date.
 
-### Description
+---
 
-The flow automatically creates a shipment record whenever an order is successfully created.
+### Email Notification
 
-### Implementation Steps
+The administrator receives an email whenever a customer places an order.
 
-- Create an after-save flow.
-- Select the Order object.
-- Add the Create Records element.
-- Create the shipment record automatically.
-- Save and activate the flow.
+---
+
+### Shipment Creation
+
+A shipment record is automatically created after the order is successfully saved.
+
+---
+
+# Flow Process
+
+```text
+Start
+  ↓
+Assignment
+  ↓
+Update Record
+  ↓
+Email Notification
+  ↓
+Create Shipment Record
+  ↓
+End
+```
 
 ---
 
 # Validation Rules
 
-## Validation Rule 1 – Customer Validation
+## Rule 1
 
 ### Rule Name
 
-Customer_Required
+Validate_Order_Number
+
+### Formula
+
+```text
+Order_Number__c <= 0
+```
+
+### Error Message
+
+```text
+Enter a valid order number.
+```
+
+---
+
+## Rule 2
+
+### Rule Name
+
+Validate_Order_Date
+
+### Formula
+
+```text
+Order_Date__c > TODAY()
+```
+
+### Error Message
+
+```text
+Future dates are not allowed.
+```
+
+---
+
+## Rule 3
+
+### Rule Name
+
+Validate_Customer
 
 ### Formula
 
@@ -133,11 +166,11 @@ Please select a customer.
 
 ---
 
-## Validation Rule 2 – Product Validation
+## Rule 4
 
 ### Rule Name
 
-Product_Required
+Validate_Product
 
 ### Formula
 
@@ -153,127 +186,89 @@ Please select a product.
 
 ---
 
-## Validation Rule 3 – Order Date Validation
-
-### Rule Name
-
-Order_Date_Validation
-
-### Formula
-
-```text
-Order_Date__c > TODAY()
-```
-
-### Error Message
-
-```text
-Order date cannot be greater than today's date.
-```
-
----
-
-## Validation Rule 4 – Order Number Validation
-
-### Rule Name
-
-Order_Number_Validation
-
-### Formula
-
-```text
-Order_Number__c <= 0
-```
-
-### Error Message
-
-```text
-Please enter a valid order number.
-```
-
----
-
 # Apex Implementation
 
-Apex was used to create records and test the application.
+Apex was used to retrieve records and verify the application's functionality.
 
 ```apex
 Customer cust = [SELECT Id FROM Customer LIMIT 1];
 Product2 prod = [SELECT Id FROM Product2 LIMIT 1];
 
-Order__c ord = new Order__c();
+Order__c orderRecord = new Order__c();
 
-ord.Name = 'Test Order';
-ord.Order_Number__c = 1001;
-ord.Customer__c = cust.Id;
-ord.Product__c = prod.Id;
-ord.Order_Date__c = Date.today();
+orderRecord.Name = 'Test Order';
+orderRecord.Order_Number__c = 1001;
+orderRecord.Customer__c = cust.Id;
+orderRecord.Product__c = prod.Id;
+orderRecord.Order_Date__c = Date.today();
 
-insert ord;
+insert orderRecord;
 ```
 
 ---
 
-# Questions and Answers
+# Assignment Questions
 
-## Which requirements did you solve using Flow?
+## Which requirements were solved using Flow?
 
-The following requirements were implemented using Salesforce Flow:
+The following tasks were completed using Record-Triggered Flows:
 
 - Automatic order date assignment
+- Email notifications
 - Shipment creation
-- Email notification generation
 
 ---
 
 ## Which requirements required Validation Rules?
 
-The following requirements required validation rules:
+The following validations were implemented:
 
-- Customer field validation
-- Product field validation
-- Order date validation
+- Customer validation
+- Product validation
 - Order number validation
+- Order date validation
 
 ---
 
-## Which requirements still needed Apex?
+## Which requirements required Apex?
 
-The following requirements required Apex:
+Apex was used for:
 
 - Record creation
-- Data retrieval
-- SOQL query execution
+- SOQL queries
 - Application testing
+- Complex operations
 
 ---
 
-## Why did you choose these solutions?
+## Why were these solutions selected?
 
 ### Flow
 
-Flow was selected because it reduces development time and simplifies automation.
+Flows simplify automation and reduce development effort.
 
 ### Validation Rules
 
-Validation rules ensure data integrity and prevent users from entering invalid data.
+Validation rules ensure data accuracy and prevent invalid data entry.
 
 ### Apex
 
-Apex provides flexibility for implementing complex business logic and performing advanced operations.
+Apex provides greater flexibility for implementing advanced business logic.
 
 ---
 
-# Future Enhancements
+# Learning Outcomes
 
-- Payment gateway integration
-- Inventory management
-- Shipment tracking
-- Dashboard creation
-- Customer feedback management
+Through this project, I learned:
+
+- Flow Builder implementation
+- Validation Rule creation
+- SOQL queries
+- Apex programming
+- Salesforce automation concepts
 
 ---
 
 # Conclusion
 
-This project demonstrates the implementation of Salesforce automation by combining Flows, Validation Rules, SOQL, and Apex to create an efficient e-commerce management system.
+This project demonstrates how Salesforce declarative features and Apex programming can work together to create an efficient order management system.
