@@ -1,0 +1,12 @@
+trigger OrderTrigger on Account (after insert) {
+
+    OrderTriggerHandler.handleOrders();
+
+}
+
+//Anonymous window
+Account acc = new Account();
+
+acc.Name = 'Laptop Order';
+
+insert acc;
