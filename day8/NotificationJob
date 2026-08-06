@@ -1,0 +1,9 @@
+public class NotificationJob implements Queueable {
+
+    public void execute(QueueableContext context) {
+
+        System.debug('Order placed successfully');
+        System.debug('Payment completed');
+        System.debug('Notification sent');
+    }
+}
