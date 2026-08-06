@@ -1,0 +1,11 @@
+trigger OrderTrigger on Account (after insert) {
+
+    System.debug('New order created');
+
+}
+//Execute Anonymous
+Account acc = new Account();
+
+acc.Name = 'Laptop Order';
+
+insert acc;
