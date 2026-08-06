@@ -1,0 +1,25 @@
+public class OrderBatch implements Database.Batchable<SObject> {
+
+    public Database.QueryLocator start(
+        Database.BatchableContext bc
+    ) {
+        System.debug('Batch started');
+
+        return Database.getQueryLocator(
+            'SELECT Id FROM Account'
+        );
+    }
+
+    public void execute(
+        Database.BatchableContext bc,
+        List<SObject> scope
+    ) {
+        System.debug('Records processed');
+    }
+
+    public void finish(
+        Database.BatchableContext bc
+    ) {
+        System.debug('Batch completed');
+    }
+}
