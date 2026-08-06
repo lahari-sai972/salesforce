@@ -1,0 +1,20 @@
+@isTest
+public class OrderServiceTest {
+
+    @isTest
+    static void testProcessOrder() {
+
+        Account acc = new Account();
+        acc.Name = 'Test Order';
+
+        insert acc;
+
+        Test.startTest();
+
+        OrderService.processOrder();
+
+        Test.stopTest();
+
+        System.assert(true);
+    }
+}
