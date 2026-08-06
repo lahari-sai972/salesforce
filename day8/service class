@@ -1,0 +1,19 @@
+//With a service class Trigger
+trigger OrderTrigger on Account (after insert) {
+
+    OrderService.processOrder();
+
+}
+
+//Service class
+
+public class OrderService {
+
+    public static void processOrder() {
+
+        System.debug('Payment completed');
+        System.debug('Inventory updated');
+        System.debug('Notification sent');
+
+    }
+}
