@@ -1,0 +1,19 @@
+public class OrderScheduler implements Schedulable {
+
+    public void execute(SchedulableContext sc) {
+        System.debug('Scheduler executed');
+    }
+}
+//Anonymous Window 
+
+String cronExpression = '0 0 6 * * ?';
+
+OrderScheduler scheduler = new OrderScheduler();
+
+String jobId = System.schedule(
+    'OrderSchedulerJob',
+    cronExpression,
+    scheduler
+);
+
+System.debug(jobId);
