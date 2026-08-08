@@ -76,7 +76,7 @@ View the available information
 Perform user actions
 Receive operation results
 View success or error messages
-2. LWC UI Layer
+##  LWC UI Layer
 
 The LWC layer is responsible for the user interface and user interaction.
 
@@ -123,7 +123,7 @@ Child Component
        │ Custom Event
        ▼
 Parent Component
-4. Apex Controller Layer
+## Apex Controller Layer
 
 The Apex Controller acts as the entry point between the LWC layer and backend logic.
 
@@ -136,7 +136,7 @@ Return the result to LWC
 
 The controller should remain focused on request handling and delegation.
 
-5. Service Layer
+## Service Layer
 
 The Service Layer contains the application's business logic.
 
@@ -151,7 +151,7 @@ Return the required result
 
 Keeping business logic in the service layer improves maintainability and separation of responsibilities.
 
-6. Salesforce Database Layer
+## Salesforce Database Layer
 
 The Salesforce database is responsible for storing and managing application data.
 
@@ -164,7 +164,7 @@ Maintain data consistency
 
 The service layer communicates with the database to perform required operations.
 
-7. Response Layer
+## Response Layer
 
 After backend processing is completed, the result is returned to the LWC.
 
@@ -177,7 +177,7 @@ Processing error
 
 The LWC uses the response to update the user interface.
 
-8. UI State Management
+## UI State Management
 
 The application manages different UI states throughout the operation.
 
@@ -207,7 +207,7 @@ Error State
 
 The operation failed and the UI displays an appropriate error message.
 
-9. Data Refresh
+## Data Refresh
 
 After a successful data-changing operation:
 
@@ -224,7 +224,7 @@ Update UI
 
 This ensures that the displayed information remains synchronized with the latest Salesforce data.
 
-10. Apex Communication
+## Apex Communication
 
 The application uses different Apex communication patterns based on the requirement.
 
@@ -246,7 +246,7 @@ Imperative Apex
      │
      ▼
 Apex Controller
-11. Complete Request Flow
+## Complete Request Flow
 User
   ↓
 LWC
