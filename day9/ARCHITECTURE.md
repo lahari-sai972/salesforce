@@ -1,6 +1,6 @@
-# 🛒 E-Commerce LWC Project
+#  E-Commerce LWC Project
 
-## 📌 About the Project
+##  About the Project
 
 This project is a simple E-Commerce application built using Salesforce Lightning Web Components (LWC) and Apex.
 
@@ -8,7 +8,7 @@ The user can view available products and click the **Buy Now** button to place a
 
 ---
 
-## 🏗️ Architecture
+##  Architecture
 
 ```text
 User
