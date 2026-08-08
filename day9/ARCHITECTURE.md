@@ -66,7 +66,7 @@ The application follows a layered architecture that separates the user interface
                  │ Error State       │
                  │ Data Refresh      │
                  └───────────────────┘
-1. User Layer
+## User Layer
 
 The user interacts with the application through the Lightning Web Component interface.
 
