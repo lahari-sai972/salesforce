@@ -1,4 +1,4 @@
-# 🏗️ Architecture
+# Architecture
 
 The application follows a layered architecture that separates the user interface, component communication, backend processing, business logic, and database operations.
 
